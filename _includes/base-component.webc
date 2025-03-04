@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/styles.css" webc:keep />
+    <script
+      webc:keep
+      src="https://unpkg.com/htmx.org@2.0.4"
+      integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav-component></nav-component>
+
+    <!-- Banner Sections -->
+    <homepage-hero webc:if="this.page.url === '/'"></homepage-hero>
+    <banner-component
+      webc:nokeep
+      webc:if="this.page.url !== '/' && banner !== false"
+      @html="title"
+    ></banner-component>
+    <hope-banner webc:nokeep webc:if="this.page.url === '/hope/'"></hope-banner>
+    <!-- End Banner Sections  -->
+    <style webc:keep webc:if="wide === true">
+      main {
+        grid-column: 1/-1;
+      }
+    </style>
+    <main @raw="this.content"></main>
+    <footer-component></footer-component>
+    <script
+      webc:keep
+      src="https://static.tithely.com/give/give.js"
+      defer
+    ></script>
+  </body>
+</html>

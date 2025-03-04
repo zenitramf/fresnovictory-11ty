@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://unpkg.com/htmx.org@2.0.4" integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header>
+  <div>
+    <a href="/" class="logo">
+      <img src="/vbc_torch_circle_only.svg" alt width="100%" height="100%">
+    </a>
+    <p>Victory Baptist Church</p>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="/salvation">Heaven</a></li>
+      <li><a href="/about-us">About Us</a></li>
+      <li><a href="/sermons">Sermons</a></li>
+      <li>
+        <a data-form="76295b31-6864-11ee-90fc-1260ab546d11" class="tithely-give-button">Give</a>
+      </li>
+      <li><a href="/visit">Visit Us</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+    <!-- Banner Sections -->
+    
+    
+    <style>
+  .cover-container {
+    grid-column: 1/-1;
+    width: 100%;
+    background: linear-gradient(to right, rebeccapurple, #b45fb6, #ff85a2);
+    display: flex;
+    flex-direction: column;
+    height: 450px;
+    justify-content: center;
+    padding-block: 3rem;
+  }
+  .cover-container h3 {
+    text-align: center;
+  }
+  .cover-image {
+    height: 100%;
+    margin-inline: auto;
+  }
+</style>
+
+<div class="cover-container">
+  <img src="/hope_is_alive_svg-1.svg" alt class="cover-image">
+  <h3>April 19-20</h3>
+  <script>
+    document.addEventListener("mousemove", (e) => {
+      let x = (e.clientX / window.innerWidth) * 100;
+      let y = (e.clientY / window.innerHeight) * 100;
+      document.querySelector(".cover-container").style.background =
+        `linear-gradient(${x}deg, rebeccapurple,#b45fb6, #ff85a2)`;
+    });
+  </script>
+</div>
+
+    <!-- End Banner Sections  -->
+    <style>
+      main {
+        grid-column: 1/-1;
+      }
+    </style>
+    <main><style>
+  .hope-form input {
+    background-color: white;
+    border: unset;
+    width: 100%;
+  }
+  .hope-form .input-half {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+  .hope-form hr {
+    background-color: white;
+  }
+  .hope-form label {
+    color: white;
+  }
+  .hope-form select {
+    background-color: white;
+    color: black;
+    width: 100%;
+  }
+  .hope-form button {
+    background-color: dodgerblue;
+    border: unset;
+    color: white;
+    width: 100%;
+    transition:
+      background-color 0.3s,
+      ease,
+      transform 0.2s ease;
+  }
+
+  .hope-form button:enabled:hover {
+    background-color: blue;
+    transform: scale(1.02);
+  }
+</style>
+
+<div style="display: flex; flex-direction: column; gap: 5rem">
+  <div class="w-normal">
+    <h2>Celebrate Easter</h2>
+    Please join us on on Saturday and Sunday as we celebrate Easter and present
+    the inspiring story of Jesus Christ and His power to transform your life.
+  </div>
+  <div style="background-color: snow; padding-block: 3rem">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem" class="w-normal">
+      <article style="background-color: #ff85a2; border: unset; border-radius: 0 30px 0 30px">
+        <h3 style="color: white">Easter Festival</h3>
+        <blockquote style="color: white; border-inline-start: 0.35rem solid white">
+          April 19th - 10am |
+          <a href="https://maps.app.goo.gl/RPEhUu8Sm1VvCjtr7" style="color: white">Al Radka Park</a>
+        </blockquote>
+      </article>
+      <article style="background-color: #b45fb6; border: unset; border-radius: 0 30px 0 30px">
+        <h3 style="color: white">Easter Service</h3>
+        <blockquote style="color: white; border-inline-start: 0.35rem solid white">
+          April 20th - 11am
+        </blockquote>
+      </article>
+    </div>
+  </div>
+  <div class="w-normal">
+    <h2>Easter Festival</h2>
+    <p>
+      Our Easter festival is free for the community and features exciting games,
+      face painting, and an exciting Easter egg hunt. Bring your basket, your
+      family, and your friends to this amazing event!
+    </p>
+  </div>
+  <div style="background-color: rebeccapurple; padding-block: 3rem">
+    <h2 style="text-align: center; margin: 0; margin-bottom: 2rem">
+      Fun For The Family
+    </h2>
+    <div style="display: grid; grid-template-columns: auto auto auto auto; gap: 0.5rem" class="w-normal">
+      <div style="text-align: center">
+        <img src="/hope/egg.png" alt style="height: 100px">
+        <h4 style="margin: 0">Easter Egg Hunt</h4>
+      </div>
+      <div style="text-align: center">
+        <img src="/hope/chase.png" alt style="height: 100px">
+        <h4 style="margin: 0">Kid's Activities</h4>
+      </div>
+      <div style="text-align: center">
+        <img src="/hope/camera.png" alt style="height: 100px">
+        <h4 style="margin: 0">Easter Egg Hunt</h4>
+      </div>
+      <div style="text-align: center">
+        <img src="/hope/glass-of-water.png" alt style="height: 100px">
+        <h4 style="margin: 0">Refreshments</h4>
+      </div>
+    </div>
+  </div>
+  <div class="w-normal">
+    <h2>Resurrection Sunday Service</h2>
+  </div>
+  <div style="background-color: #b45fb6">
+    <div class="w-normal">
+      <h2>Register</h2>
+      <article style="border-color: white">
+        <form action class="hope-form">
+          <p>
+            <label for="name">Full Name</label>
+            <input name="name" type="text" class="input-full">
+          </p>
+          <div class="input-half">
+            <p>
+              <label for="email">Email</label>
+              <input name="email" type="email" class="input">
+            </p>
+            <p>
+              <label for="email">Phone</label>
+              <input name="phone" type="text" class="input">
+            </p>
+          </div>
+          <hr>
+          <p>
+            <label for="street-address">Street Address</label>
+            <input name="street-address" type="text">
+          </p>
+          <div class="input-half">
+            <p>
+              <label for="city">City</label>
+              <input name="city" type="text">
+            </p>
+            <p>
+              <label for="state">State</label>
+              <input name="state" type="text">
+            </p>
+          </div>
+          <p>
+            <label for="zip">Postal / Zip Code</label>
+            <input name="zip" type="text">
+          </p>
+          <hr>
+          <p>
+            <label for="guests">Number of Guests Attending</label>
+            <input name="guests" type="number">
+          </p>
+          <p>
+            <label for="select">How Did You Hear About Us</label>
+            <select id="select">
+              <optgroup label="Option Group">
+                <option>Flyer</option>
+                <option>Friend/Coworker</option>
+                <option>Online</option>
+                <option>Other</option>
+              </optgroup>
+            </select>
+          </p>
+          <button type="submit">Submit</button>
+        </form>
+      </article>
+    </div>
+  </div>
+</div>
+</main>
+    <footer>
+  <span class="border-text">
+    But thanks be to God, which giveth us the victory through our Lord Jesus
+    Christ - 1 Corinthians 15:57</span>
+  <div class="footer-container">
+    <img src="/vbc_torch_circle_only.svg" alt width="100%" height="100%">
+    <div>
+      <aside>
+        <ul class="service-times">
+          <li>
+            <span style="font-weight: 700; padding-right: 0.5rem">Sunday School :</span>
+            <span style="text-align: right">10:00am</span>
+          </li>
+<li>
+            <span style="font-weight: 700; padding-right: 0.5rem">Sunday Morning :</span>
+            <span style="text-align: right">11:00am</span>
+          </li>
+<li>
+            <span style="font-weight: 700; padding-right: 0.5rem">Sunday Evening :</span>
+            <span style="text-align: right">5:30pm</span>
+          </li>
+<li>
+            <span style="font-weight: 700; padding-right: 0.5rem">Thursday Evening :</span>
+            <span style="text-align: right">7:00pm</span>
+          </li>
+        </ul>
+      </aside>
+      <div style="display: grid; grid-template-columns: auto auto">
+        <div style="border-right: 1px solid var(--border)">
+          <h5 style="margin-top: 0">Location</h5>
+          <address>
+            <a href="https://maps.app.goo.gl/PadKPd36XpjaKs449">1717 N Gateway Blvd #105, Fresno, CA 93727</a>
+            <br>
+            Located in: Gateway Business Complex
+          </address>
+        </div>
+        <div>
+          <h5 style="margin-top: 0">Connect With Us</h5>
+          <a href="https://www.facebook.com/fresnovictory/" style="color: inherit"><i style="font-size: 40px; padding-right: 2rem" class="bi bi-facebook"></i></a>
+          <a href="https://www.youtube.com/@fresnovictory" style="color: inherit"><i style="font-size: 40px" class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section>
+    <p>
+      ©
+      2025
+      Victory Baptist Church, All Rights Reserved
+      <a href="/terms-of-use">Terms of Use</a> |
+      <a href="/privacy">Privacy Policy</a>
+    </p>
+  </section>
+</footer>
+
+    <script src="https://static.tithely.com/give/give.js" defer></script>
+  
+
+</body>
+</html>
