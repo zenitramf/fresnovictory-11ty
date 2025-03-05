@@ -2,19 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="description" content>
+    <meta name="description" content="Victory Baptist Church of Fresno">
+    <meta name="htmx-config" content="{&quot;selfRequestsOnly&quot;: false}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="generator" content="Eleventy v3.0.0">
+    
     <link rel="stylesheet" href="/css/styles.css">
     <script src="https://unpkg.com/htmx.org@2.0.4" integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/alpinejs" defer></script>
   </head>
   <body>
-    <header>
+    <header x-data="{ mobileNav: false }">
   <div>
     <a href="/" class="logo">
-      <img src="/vbc_torch_circle_only.svg" alt width="100%" height="100%">
+      <img alt width="100%" height="100%">
     </a>
     <p>Victory Baptist Church</p>
   </div>
-  <nav>
+  <nav class="wide-nav">
     <ul>
       <li><a href="/salvation">Heaven</a></li>
       <li><a href="/about-us">About Us</a></li>
@@ -25,6 +30,21 @@
       <li><a href="/visit">Visit Us</a></li>
     </ul>
   </nav>
+
+  <nav x-show="mobileNav" x-cloak class="menu">
+    <a href="/">Home</a>
+    <a href="/salvation">Heaven</a>
+    <a href="/about-us">About Us</a>
+    <a href="/sermons">Sermons</a>
+    <a data-form="76295b31-6864-11ee-90fc-1260ab546d11" class="tithely-give-button">Give</a>
+    <a href="/visit">Visit Us</a>
+  </nav>
+
+  <div x-bind:class="mobileNav &amp;&amp; 'active'" x-on:click="mobileNav=mobileNav?false:true" class="hamburger">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
 </header>
 
 
@@ -53,7 +73,10 @@
 
 <div class="cover-container">
   <img src="/hope_is_alive_svg-1.svg" alt class="cover-image">
-  <h3>April 19-20</h3>
+  <h3 style="margin-bottom: 0">April 19-20</h3>
+  <h4 style="margin-inline: auto; margin-bottom: 0">
+    <a href="#festival-registration" style="background-color: lightblue; border: unset; width: 200px; text-align: center" class="button">RSVP</a>
+  </h4>
   <script>
     document.addEventListener("mousemove", (e) => {
       let x = (e.clientX / window.innerWidth) * 100;
@@ -71,15 +94,28 @@
       }
     </style>
     <main><style>
+  .hope-container {
+    width: min(980px, 90%);
+    border-color: white;
+    margin-inline: auto;
+  }
+  .hope-container {
+    color: white;
+  }
   .hope-form input {
     background-color: white;
     border: unset;
     width: 100%;
+    color: black;
   }
   .hope-form .input-half {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    }
   }
   .hope-form hr {
     background-color: white;
@@ -107,6 +143,64 @@
     background-color: blue;
     transform: scale(1.02);
   }
+
+  .festival-times {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    }
+  }
+
+  .festival-div {
+    background-color: #b45fb6;
+    padding-block: 3rem;
+    div {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 3.5rem;
+      @media (max-width: 600px) {
+        grid-template-columns: 1fr 1fr;
+      }
+      div {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        gap: 0.5rem;
+        text-align: center;
+
+        img {
+          height: 100px;
+          margin-inline: auto;
+        }
+      }
+    }
+  }
+
+  .festival-form-container {
+    @media (max-width: 600px) {
+      div {
+        margin-inline: unset;
+        width: 100%;
+      }
+    }
+  }
+  .service-time-divider {
+    background-color: snow;
+    @media (prefers-color-scheme: light) {
+      background-color: lightblue;
+    }
+    padding-block: 3rem;
+  }
+
+  .festival-register-button {
+    background-color: lightblue !important;
+    @media (prefers-color-scheme: light) {
+      background-color: rebeccapurple !important;
+    }
+    border: unset !important;
+  }
 </style>
 
 <div style="display: flex; flex-direction: column; gap: 5rem">
@@ -115,8 +209,8 @@
     Please join us on on Saturday and Sunday as we celebrate Easter and present
     the inspiring story of Jesus Christ and His power to transform your life.
   </div>
-  <div style="background-color: snow; padding-block: 3rem">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem" class="w-normal">
+  <div class="service-time-divider">
+    <div class="w-normal festival-times">
       <article style="background-color: #ff85a2; border: unset; border-radius: 0 30px 0 30px">
         <h3 style="color: white">Easter Festival</h3>
         <blockquote style="color: white; border-inline-start: 0.35rem solid white">
@@ -133,56 +227,88 @@
     </div>
   </div>
   <div class="w-normal">
-    <h2>Easter Festival</h2>
-    <p>
-      Our Easter festival is free for the community and features exciting games,
-      face painting, and an exciting Easter egg hunt. Bring your basket, your
-      family, and your friends to this amazing event!
-    </p>
+    <aside style="padding-block: 2rem">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1598.3890101739237!2d-119.68769520000001!3d36.75189895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8094592e55115d85%3A0xc9ac63db2925d93!2sAl%20Radka%20Park%2C%205897%20E%20Belmont%20Ave%2C%20Fresno%2C%20CA%2093727!5e0!3m2!1sen!2sus!4v1741123818124!5m2!1sen!2sus" height="450" width="100%" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="border: 0"></iframe>
+    </aside>
+    <div>
+      <h2>Easter Festival</h2>
+      <p>
+        Our Easter festival is free for the community and features exciting
+        games, face painting, and an exciting Easter egg hunt. Bring your
+        basket, your family, and your friends to this amazing event!
+      </p>
+      <p>The event will be located at Al Radka Park.</p>
+      <address>
+        5897 E. Belmont Ave, <br>
+        Fresno CA 93727
+      </address>
+      <h4>
+        <a href="#festival-registration" class="button festival-register-button">Count Me In!</a>
+      </h4>
+    </div>
   </div>
-  <div style="background-color: rebeccapurple; padding-block: 3rem">
+  <div class="festival-div">
     <h2 style="text-align: center; margin: 0; margin-bottom: 2rem">
       Fun For The Family
     </h2>
-    <div style="display: grid; grid-template-columns: auto auto auto auto; gap: 0.5rem" class="w-normal">
-      <div style="text-align: center">
-        <img src="/hope/egg.png" alt style="height: 100px">
+    <div class="w-normal">
+      <div>
+        <img src="/hope/egg.png" alt>
         <h4 style="margin: 0">Easter Egg Hunt</h4>
       </div>
-      <div style="text-align: center">
-        <img src="/hope/chase.png" alt style="height: 100px">
+      <div>
+        <img src="/hope/chase.png" alt>
         <h4 style="margin: 0">Kid's Activities</h4>
       </div>
-      <div style="text-align: center">
-        <img src="/hope/camera.png" alt style="height: 100px">
-        <h4 style="margin: 0">Easter Egg Hunt</h4>
+      <div>
+        <img src="/hope/camera.png" alt>
+        <h4 style="margin: 0">Photo Booth</h4>
       </div>
-      <div style="text-align: center">
-        <img src="/hope/glass-of-water.png" alt style="height: 100px">
+      <div>
+        <img src="/hope/glass-of-water.png" alt>
         <h4 style="margin: 0">Refreshments</h4>
       </div>
     </div>
   </div>
   <div class="w-normal">
-    <h2>Resurrection Sunday Service</h2>
+    <aside style="padding-block: 2rem; border: unset; background-color: unset">
+      <article style="background-color: rebeccapurple; border: unset; border-radius: 0 30px 0 30px">
+        <h3 style="color: white">April 20th - 11am</h3>
+        <blockquote style="color: white; border-inline-start: 0.35rem solid white">
+          Sunday Service
+        </blockquote>
+      </article>
+    </aside>
+    <div>
+      <h2>Resurrection Sunday Service</h2>
+      <p>
+        Join us on Sunday, April 20th as we experience a memorable Easter
+        celebration service. Join with friends as to hear encouraging Bible
+        preaching that will highlight the life-changing truth of the death,
+        burial, and resurrection of Jesus Christ.
+      </p>
+    </div>
   </div>
-  <div style="background-color: #b45fb6">
-    <div class="w-normal">
-      <h2>Register</h2>
-      <article style="border-color: white">
-        <form action class="hope-form">
+  <div style="background-color: rebeccapurple" class="festival-form-container">
+    <div style="padding-block: 3rem" class="w-normal">
+      <article id="hope-registration" x-data="{ heardSelected:'' }" class="hope-container">
+        <section id="festival-registration">
+          <h2>Easter Festival Registration</h2>
+        </section>
+        <form hx-post="https://webhook.site/hope-is-alive" hx-swap="innerHTML" hx-target="#hope-registration" class="hope-form">
           <p>
             <label for="name">Full Name</label>
-            <input name="name" type="text" class="input-full">
+            <input name="name" type="text" required class="input-full">
           </p>
           <div class="input-half">
             <p>
               <label for="email">Email</label>
-              <input name="email" type="email" class="input">
+              <input name="email" type="email" required class="input">
             </p>
             <p>
-              <label for="email">Phone</label>
-              <input name="phone" type="text" class="input">
+              <label for="phone">Phone</label>
+              <input name="phone" type="tel" pattern="\d{3}-\d{3}-\d{4}" title="Enter a 10-digit phone number" class="input">
+              <small>Format: 123-456-7890</small>
             </p>
           </div>
           <hr>
@@ -196,29 +322,42 @@
               <input name="city" type="text">
             </p>
             <p>
-              <label for="state">State</label>
-              <input name="state" type="text">
+              <label for="state">State (2-letter abbreviation)</label>
+              <input name="state" type="text" pattern="^[A-Za-z]{2}$" title="Enter a 2-letter state abbreviation (e.g., TX, CA)">
             </p>
           </div>
           <p>
             <label for="zip">Postal / Zip Code</label>
-            <input name="zip" type="text">
+            <input name="zip" type="text" pattern="^\d{5}(-\d{4})?$" title="Enter a valid ZIP code (e.g., 12345 or 12345-6789)">
           </p>
           <hr>
           <p>
             <label for="guests">Number of Guests Attending</label>
-            <input name="guests" type="number">
+            <input name="guests" type="number" min="1" required>
           </p>
           <p>
             <label for="select">How Did You Hear About Us</label>
-            <select id="select">
-              <optgroup label="Option Group">
-                <option>Flyer</option>
-                <option>Friend/Coworker</option>
-                <option>Online</option>
-                <option>Other</option>
-              </optgroup>
+            <select id="select" x-model="heardSelected" name="how-did-you-hear-about-us" required>
+              <option value disabled selected>Select an option</option>
+              <option value="flyer">Flyer</option>
+              <option value="friend-coworker">Friend/Coworker</option>
+              <option value="online">Online</option>
+              <option value="other">Other</option>
             </select>
+          </p>
+          <p x-show="heardSelected === 'other'">
+            <label for="other-text">Please Enter Another Option Here</label>
+            <input type="text" name="other-text" id="other-text">
+          </p>
+          <p>
+            <input type="checkbox" name="newsletter" value="send-newsletter" style="width: unset; height: unset">
+            <label for="send-newsletter">I would like to receive the newsletter about upcoming
+              events</label>
+          </p>
+          <p>
+            <input type="checkbox" name="contact-me" value="contact-me" style="width: unset; height: unset">
+            <label for="contact-me">I would like to be contacted with more information about Victory
+              Baptist Church</label>
           </p>
           <button type="submit">Submit</button>
         </form>
@@ -232,10 +371,10 @@
     But thanks be to God, which giveth us the victory through our Lord Jesus
     Christ - 1 Corinthians 15:57</span>
   <div class="footer-container">
-    <img src="/vbc_torch_circle_only.svg" alt width="100%" height="100%">
+    <img alt width="100%" height="100%" class="footer-icon">
     <div>
       <aside>
-        <ul class="service-times">
+        <ul class="service-times-footer">
           <li>
             <span style="font-weight: 700; padding-right: 0.5rem">Sunday School :</span>
             <span style="text-align: right">10:00am</span>
@@ -254,9 +393,9 @@
           </li>
         </ul>
       </aside>
-      <div style="display: grid; grid-template-columns: auto auto">
-        <div style="border-right: 1px solid var(--border)">
-          <h5 style="margin-top: 0">Location</h5>
+      <div class="footer-inner-container">
+        <div>
+          <h5>Location</h5>
           <address>
             <a href="https://maps.app.goo.gl/PadKPd36XpjaKs449">1717 N Gateway Blvd #105, Fresno, CA 93727</a>
             <br>
@@ -264,7 +403,7 @@
           </address>
         </div>
         <div>
-          <h5 style="margin-top: 0">Connect With Us</h5>
+          <h5>Connect With Us</h5>
           <a href="https://www.facebook.com/fresnovictory/" style="color: inherit"><i style="font-size: 40px; padding-right: 2rem" class="bi bi-facebook"></i></a>
           <a href="https://www.youtube.com/@fresnovictory" style="color: inherit"><i style="font-size: 40px" class="bi bi-youtube"></i></a>
         </div>

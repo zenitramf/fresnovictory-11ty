@@ -20,7 +20,20 @@
 
 <div class="cover-container">
   <img class="cover-image" src="/hope_is_alive_svg-1.svg" alt="" />
-  <h3>April 19-20</h3>
+  <h3 style="margin-bottom: 0">April 19-20</h3>
+  <h4 style="margin-inline: auto; margin-bottom: 0">
+    <a
+      href="#festival-registration"
+      class="button"
+      style="
+        background-color: lightblue;
+        border: unset;
+        width: 200px;
+        text-align: center;
+      "
+      >RSVP</a
+    >
+  </h4>
   <script webc:keep>
     document.addEventListener("mousemove", (e) => {
       let x = (e.clientX / window.innerWidth) * 100;

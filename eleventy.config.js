@@ -3,7 +3,7 @@ import pluginWebc from "@11ty/eleventy-plugin-webc";
 export default function (eleventyConfig) {
   eleventyConfig.setServerOptions({
     watch: ["./_src/sass/styles.scss"],
-    domDiff: false
+    domDiff: true
   })
   eleventyConfig.addPlugin(pluginWebc, {
     components: "./_includes/webc/*.webc"

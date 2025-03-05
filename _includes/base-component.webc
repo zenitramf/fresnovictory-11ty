@@ -2,7 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="description" content="" />
+    <meta name="description" content="Victory Baptist Church of Fresno" />
+    <meta name="htmx-config" content='{"selfRequestsOnly": false}' />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <template webc:type="11ty" 11ty:type="liquid">
+      <meta name="generator" content="{{ eleventy.generator }}" />
+    </template>
     <link rel="stylesheet" href="/css/styles.css" webc:keep />
     <script
       webc:keep
@@ -10,6 +18,7 @@
       integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+"
       crossorigin="anonymous"
     ></script>
+    <script webc:keep src="https://unpkg.com/alpinejs" defer></script>
   </head>
   <body>
     <nav-component></nav-component>

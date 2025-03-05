@@ -1,11 +1,11 @@
-<header>
+<header x-data="{ mobileNav: false }">
   <div>
     <a href="/" class="logo">
-      <img src="/vbc_torch_circle_only.svg" alt="" width="100%" height="100%" />
+      <img alt="" width="100%" height="100%" />
     </a>
     <p>Victory Baptist Church</p>
   </div>
-  <nav>
+  <nav class="wide-nav">
     <ul>
       <li><a href="/salvation">Heaven</a></li>
       <li><a href="/about-us">About Us</a></li>
@@ -20,4 +20,27 @@
       <li><a href="/visit">Visit Us</a></li>
     </ul>
   </nav>
+
+  <nav class="menu" x-show="mobileNav" x-cloak>
+    <a href="/">Home</a>
+    <a href="/salvation">Heaven</a>
+    <a href="/about-us">About Us</a>
+    <a href="/sermons">Sermons</a>
+    <a
+      class="tithely-give-button"
+      data-form="76295b31-6864-11ee-90fc-1260ab546d11"
+      >Give</a
+    >
+    <a href="/visit">Visit Us</a>
+  </nav>
+
+  <div
+    class="hamburger"
+    x-bind:class="mobileNav && 'active'"
+    x-on:click="mobileNav=mobileNav?false:true"
+  >
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
 </header>

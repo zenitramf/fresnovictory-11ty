@@ -1,6 +1,11 @@
 <section>
   <h2>Service Times</h2>
-  <article></article>
+  <div class="service-times-home">
+    <article webc:for="time of serviceTimes()">
+      <span @raw="time.desc"></span>
+      <span @raw="time.time"></span>
+    </article>
+  </div>
 </section>
 <section>
   <h2>Learn More</h2>
