@@ -6,32 +6,11 @@
     <p>Victory Baptist Church</p>
   </div>
   <nav class="wide-nav">
-    <ul>
-      <li><a href="/salvation">Heaven</a></li>
-      <li><a href="/about-us">About Us</a></li>
-      <li><a href="/sermons">Sermons</a></li>
-      <li>
-        <a
-          class="tithely-give-button"
-          data-form="76295b31-6864-11ee-90fc-1260ab546d11"
-          >Give</a
-        >
-      </li>
-      <li><a href="/visit">Visit Us</a></li>
-    </ul>
+    <navmenu-component></navmenu-component>
   </nav>
 
   <nav class="menu" x-show="mobileNav" x-cloak>
-    <a href="/">Home</a>
-    <a href="/salvation">Heaven</a>
-    <a href="/about-us">About Us</a>
-    <a href="/sermons">Sermons</a>
-    <a
-      class="tithely-give-button"
-      data-form="76295b31-6864-11ee-90fc-1260ab546d11"
-      >Give</a
-    >
-    <a href="/visit">Visit Us</a>
+    <navmenu-component @home="true"></navmenu-component>
   </nav>
 
   <div

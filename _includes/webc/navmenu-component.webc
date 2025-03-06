@@ -1,0 +1,14 @@
+<ul>
+  <li webc:if="home"><a href="/">Home</a></li>
+  <li><a href="/salvation">Heaven</a></li>
+  <li><a href="/about-us">About Us</a></li>
+  <li><a href="/sermons">Sermons</a></li>
+  <li>
+    <a
+      class="tithely-give-button"
+      data-form="76295b31-6864-11ee-90fc-1260ab546d11"
+      >Give</a
+    >
+  </li>
+  <li><a href="/visit">Visit Us</a></li>
+</ul>

@@ -23,7 +23,6 @@
   --preformatted: #444;
   --marked: #ffdd33;
   --disabled: #efefef;
-  --bg-accent: ivory;
   --icon: url("/vbc_torch_circle_only_color.svg");
 }
 
@@ -41,7 +40,6 @@
     --code: #f06292;
     --preformatted: #ccc;
     --disabled: #111;
-    --bg-accent: ivory;
     --icon: url("/vbc_torch_circle_only.svg");
   }
   /* Add a bit of transparency so light media isn't so glaring in dark mode */
@@ -88,7 +86,6 @@ body {
 
     /* Mobile menu styles */
     .menu {
-      flex-direction: column;
       background: var(--accent-bg);
       position: absolute;
       top: 75px;
@@ -96,6 +93,10 @@ body {
       width: 100%;
       text-align: center;
       padding: 10px 0;
+    }
+
+    .menu ul {
+      flex-direction: column;
     }
 
     .menu a {
@@ -205,7 +206,7 @@ body {
       gap: 1rem;
     }
     article {
-      background-color: var(--bg-accent);
+      background-color: var(--accent-bg);
       border: unset;
       color: var(--text);
     }
