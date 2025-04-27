@@ -23,7 +23,7 @@
   --preformatted: #444;
   --marked: #ffdd33;
   --disabled: #efefef;
-  --icon: url("/vbc_torch_circle_only_color.svg");
+  --icon: url("/img/vbc_torch_circle_only_color.svg");
 }
 
 /* Dark theme */
@@ -40,19 +40,23 @@
     --code: #f06292;
     --preformatted: #ccc;
     --disabled: #111;
-    --icon: url("/vbc_torch_circle_only.svg");
+    --icon: url("/img/vbc_torch_circle_only.svg");
   }
+
   /* Add a bit of transparency so light media isn't so glaring in dark mode */
   img,
   video {
     opacity: 0.8;
   }
 }
+
 [x-cloak] {
   display: none !important;
 }
+
 body {
   grid-template-columns: 1fr min(1280px, 90%) 1fr;
+
   header {
     border-bottom: none;
     display: flex;
@@ -110,9 +114,11 @@ body {
     .hamburger.active .bar:nth-child(1) {
       transform: translateY(8px) rotate(45deg);
     }
+
     .hamburger.active .bar:nth-child(2) {
       opacity: 0;
     }
+
     .hamburger.active .bar:nth-child(3) {
       transform: translateY(-8px) rotate(-45deg);
     }
@@ -120,24 +126,30 @@ body {
     div {
       display: flex;
       align-items: center;
+
       a {
         height: 50px;
+
         img {
           height: 50px;
           content: var(--icon);
         }
       }
+
       p {
         font-size: 1.6rem;
         padding-left: 1rem;
       }
     }
+
     .wide-nav {
       padding-top: unset;
+
       ul {
         li {
           padding-inline: 0.5rem;
           padding-inline-end: 0;
+
           a {
             margin: 0;
             width: 120px;
@@ -145,12 +157,14 @@ body {
         }
       }
     }
+
     @media (max-width: 600px) {
       div {
         p {
           display: none;
         }
       }
+
       .wide-nav {
         display: none;
       }
@@ -176,7 +190,7 @@ body {
     grid-column: 1/-1;
     background:
       linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url("/hero_screen.webp") no-repeat center center/cover;
+      url("/img/hero_screen.webp") no-repeat center center/cover;
     color: white;
     display: flex;
     flex-direction: column;
@@ -184,10 +198,12 @@ body {
     text-align: center;
     padding: 100px 20px;
     height: 800px;
+
     h1 {
       font-size: 3em;
       margin: 0 0 20px;
     }
+
     p {
       font-size: 1.2em;
       margin: 0 0 20px;
@@ -197,6 +213,7 @@ body {
   .service-times-home {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+
     @media (max-width: 600px) {
       grid-template-columns: 1fr;
       gap: 0.5rem;
@@ -205,6 +222,7 @@ body {
     & {
       gap: 1rem;
     }
+
     article {
       background-color: var(--accent-bg);
       border: unset;
@@ -214,6 +232,7 @@ body {
 
   footer {
     padding-inline: 0;
+
     .border-text {
       padding-inline: 0.5rem;
       margin-top: 0;
@@ -222,6 +241,7 @@ body {
       background-color: var(--bg);
       font-weight: 900;
       font-size: 1rem;
+
       @media (max-width: 600px) {
         font-weight: 700;
         font-size: 0.8rem;
@@ -247,12 +267,15 @@ body {
             height: unset;
             padding-bottom: 1rem;
           }
+
           & {
             padding-top: 1rem;
           }
+
           p {
             margin: 0.5rem;
           }
+
           ul {
             margin: 0;
           }
@@ -263,10 +286,12 @@ body {
     .footer-inner-container {
       display: grid;
       grid-template-columns: auto auto;
+
       @media (max-width: 600px) {
         grid-template-columns: 1fr;
         border: unset;
       }
+
       div {
         h5 {
           @media (min-width: 600px) {
@@ -280,6 +305,7 @@ body {
       content: var(--icon);
       height: 100%;
       width: auto;
+
       @media (max-width: 600px) {
         display: none;
       }

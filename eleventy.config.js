@@ -21,7 +21,11 @@ export default function (eleventyConfig) {
   eleventyConfig.addJavaScriptFunction("currentDate", function () {
     const today = new Date()
     return today.getFullYear()
-  })
+  });
+
+  eleventyConfig.addPassthroughCopy("img");
+
+
 
 }
 
